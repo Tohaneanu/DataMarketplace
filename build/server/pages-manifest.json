@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/Data-details": "pages/Data-details.html",
+  "/author": "pages/author.html",
+  "/connectWallet": "pages/connectWallet.html",
+  "/contactus": "pages/contactus.html",
+  "/": "pages/index.html",
+  "/reSellToken": "pages/reSellToken.html",
+  "/unauthorizedPage": "pages/unauthorizedPage.html",
+  "/searchPage": "pages/searchPage.html",
+  "/useTokenDiabetesPredict": "pages/useTokenDiabetesPredict.html",
+  "/uploadData": "pages/uploadData.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
