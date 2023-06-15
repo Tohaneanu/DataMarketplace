@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 
 //INTERNAL IMPORT
-import Style from "../styles/upload-Data.module.css";
+import Style from "../styles/uploadData.module.css";
 import { UploadData } from "../UploadData/uploadDataIndex";
 
 //SMART CONTRACT IMPORT
