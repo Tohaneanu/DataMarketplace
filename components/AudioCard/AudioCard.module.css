@@ -1,0 +1,264 @@
+
+.audioCard_box{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 4rem);
+    gap: 1rem;
+    overflow: hidden;
+transition:  all .3s ease-in;
+    border-radius: 2rem;
+}
+
+.audioCard_box:hover{
+    box-shadow: var(--box-shadow);
+}
+
+.audioCard_box_time{
+    background-color: var(--main-bg-color);
+    padding: 1rem 4.5rem;
+    margin-right: -1.4rem;
+    transform: skewX(35deg);
+    border-bottom-left-radius: 1rem;
+}
+
+.audioCard_box_like_time_remaing{
+    transform: skewX(-35deg);
+    text-align: center;
+}
+
+.audioCard_box_like_time_remaing small{
+    font-weight: 500;
+}
+
+.audioCard_box_like_time_remaing h5{
+    font-size: 1.5rem;
+    margin-top: 1.6rem;
+}
+
+.audioCard_box_player{
+    grid-column: 1 / 1;
+    grid-row:  2 / 5;
+
+    display:  flex;
+    padding-inline: 1.5rem;
+    gap: 4rem;
+    z-index: 1234;
+    align-items: center;
+}
+
+.audioCard_box_musicPlayer_icon{
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--icons-color);
+    color: var(--main-bg-color);
+    font-size: 2rem;
+}
+
+.audioCard_box_img{
+    grid-column: 1 / -1;
+    grid-row:  1 / -1;
+}
+
+.audioCard_box_details{
+    grid-column: 1 / -1;
+    grid-row: 5 / -1;
+
+    z-index: 123;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:  var(--main-bg-color);
+    padding: 1rem 0;
+    width: 90%;
+    border-top-right-radius: 2rem;
+    padding: 2rem;
+    line-height: .1;
+}
+
+.audioCard_box_details_info h4{
+    font-size: 1.1rem;
+    line-height: 0;
+}
+
+.audioCard_box_details_info_price{
+    border: 1px solid var(--icons-color);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.audioCard_box_details_info_price small{
+    background-color: var(--icons-color);
+    color: var(--main-bg-color);
+    padding: .4rem .5rem;
+    border-radius: .5rem;
+}
+
+.audioCard_box_details_info_price p{
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.audioCard_box_details_stock{
+    text-align: end;
+    display: grid;
+}
+
+.audioCard_box_details_stock small{
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 35em) {
+    .audioCard_box_time{
+        padding-inline: 2.5rem ;
+    }
+
+    .audioCard_box_like_time_remaing h5{
+        font-size: 1rem;
+    }
+
+    .audioCard_box_details{
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-device-width: 427px) and (max-device-width: 768px) {
+    .audioCard_box_like_time_remaing h5{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-device-width: 770px) and (max-device-width: 1024px) {
+    .audioCard_box_time{
+        padding: 1rem 2rem;
+    }
+
+    .audioCard_box_like_time_remaing h5{
+        font-size: 1rem;
+    }
+
+    .audioCard_box_details_info h4{
+        font-size: 1rem;
+    }
+}
+.DataCardTwo{
+    width: 80%;
+    margin:  0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 14rem;
+}
+
+.DataCardTwo_box{
+    display: grid;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    border-radius: 1rem;
+}
+
+.DataCardTwo_box:hover{
+    box-shadow: var(--box-shadow);
+}
+
+
+.DataCardTwo_box_like_box_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.DataCardTwo_box_like_box_box_icon{
+    color: var(--icons-color);
+    font-size: 2rem;
+}
+
+.DataCardTwo_box_like_box_box p{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    background-color: var(--icons-color);
+    color: var(--main-bg-color);
+    border-radius: 2rem;
+    padding: 0 .5rem;
+}
+
+.DataCardTwo_box_img{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.DataCardTwo_box_img_img{
+    border-radius: 1rem;
+}
+
+.DataCardTwo_box_info{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.DataCardTwo_box_info_left{
+    line-height: 0;
+}
+
+.DataCardTwo_box_info small{
+    font-size: 1rem;
+}
+
+.DataCardTwo_box_info_left p{
+    font-size: 2rem;
+    font-weight: 900;
+} 
+
+.DataCardTwo_box_price{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    line-height: 0;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.DataCardTwo_box_price_box p{
+    border:  1px solid var(--icons-color);
+    padding: 1.5rem 1rem 1rem 1rem;
+    font-size: 1.4rem;
+    margin-top: .5rem;
+    border-radius: .3rem;
+ 
+}
+
+.DataCardTwo_box_price_box small{
+    background-color: var(--icons-color);
+    color: var(--main-bg-color);
+    padding: .3rem;
+    border-radius: .3rem;
+    margin-left: 2rem;
+}
+
+.DataCardTwo_box_price_stock{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 35em) {
+    .DataCardTwo{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .DataCardTwo{
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

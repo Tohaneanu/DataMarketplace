@@ -1,0 +1,70 @@
+.useTokenDiabetesPredict {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+}
+
+.Form_box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  grid-row-gap: 15px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+}
+
+.Form_box_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Form_box_input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Form_box_input_box {
+  display: flex;
+  padding-right: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Form_box_input_box input {
+  width: 100%;
+  width: 200px;
+  height: 35px;
+  padding: 0.5rem;
+  border: 1px solid var(--icons-color);
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+}
+
+.upload_box_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.upload_box_btn_style {
+  padding: 0.5rem 2rem;
+
+  transition: background-color 0.3s ease;
+}
+
+
+@media screen and (max-width: 35em) {
+  .Form_box {
+      grid-template-columns: 1fr;
+  }
+
+  .Form_box_row {
+      flex-direction: column;
+  }
+}

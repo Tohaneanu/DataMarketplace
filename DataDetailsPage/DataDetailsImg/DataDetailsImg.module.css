@@ -1,0 +1,69 @@
+
+
+.DataDetailsImg{
+    width: 100%;
+}
+
+.DataDetailsImg_box_Data{
+    display: grid;
+}
+
+.DataDetailsImg_box_Data_img{
+    grid-column: 1 / -1;
+    grid-row: 1 / end;
+}
+
+.DataDetailsImg_box_Data_img_img{
+    border-radius: 1rem;
+}
+
+.DataDetailsImg_box_Data_like{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+    grid-row: 1 / end;
+    z-index: 111111;
+    align-self: flex-start;
+    padding-inline: 2rem;
+}
+
+.DataDetailsImg_box_Data_like p{
+    background-color: var(--icons-color);
+    padding: .2rem 1rem;
+    color: var(--main-bg-color);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.DataDetailsImg_box_Data_like_icon{
+    font-size: 1.4rem;
+}
+
+.DataDetailsImg_box_details,
+.DataDetailsImg_box_description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 0;
+    background-color: var(--icons-bg-color);
+    border-radius: .5rem;
+    padding-inline: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: var( --shadow-dark-color);
+}
+
+.DataDetailsImg_box_details_box,
+.DataDetailsImg_box_description_box{
+    padding: .1rem 1rem;
+    font-size: 1rem;
+}
+
+.DataDetailsImg_box_details_box p{
+    line-height: 1;
+    font-size: 1rem;
+}
