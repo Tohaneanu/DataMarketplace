@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useState } from "react";import Link from "next/link";
 import { useRouter } from "next/router";
 import { GrClose } from "react-icons/gr";
 import {
@@ -10,15 +8,12 @@ import {
   TiSocialYoutube,
   TiSocialInstagram,
   TiArrowSortedDown,
-  TiArrowSortedUp,
 } from "react-icons/ti";
 import { DiJqueryLogo } from "react-icons/di";
 
 //INTERNAL IMPORT
 import Style from "./SideBar.module.css";
-import images from "../../../img";
 import Button from "../../Button/Button";
-import { Router } from "next/router";
 
 const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   //------USESTATE
@@ -43,7 +38,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
     },
     {
       name: "Data Details",
-      link: "Data-details",
+      link: "dataDetails",
     },
     {
       name: "Account Setting",

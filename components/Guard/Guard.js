@@ -12,7 +12,6 @@ const Guard = ({ children }) => {
   useEffect(() => {
     const checkPermission = async () => {
       const value = await hasTokenFromOwner();
-      console.log(value)
       setPermission(value);
       setLoading(false);
     };

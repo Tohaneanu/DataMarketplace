@@ -2,10 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 import {toast} from "react-toastify";
 //INTRNAL IMPORT
 import Style from "../styles/searchPage.module.css";
-import { Slider, Brand, Loader, Filter, SelectComponent, AudioCard } from "../components/componentsindex";
-import { SearchBar } from "../SearchPage/searchBarIndex";
+import { Loader, SelectComponent, AudioCard } from "../components/componentsindex";
+import { SearchBar } from "../utils/SearchPage/searchBarIndex";
 
-import { DataCard, Banner } from "../collectionPage/collectionIndex";
+import { DataCard, Banner } from "../utils/collectionPage/collectionIndex";
 import images from "../img";
 
 //SMART CONTRACT IMPORT
@@ -25,7 +25,6 @@ const searchPage = () => {
       fetchDatas().then((items) => {
         setDatas(items.reverse());
         setDatasCopy(items);
-        console.log(Datas);
       });
       // }
     } catch (error) {

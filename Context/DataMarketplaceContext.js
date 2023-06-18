@@ -4,7 +4,6 @@ import { ethers } from "ethers";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
-import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 import { toast } from "react-toastify";
 const projectId = process.env.NEXT_PUBLIC_POJECT_ID;
 const projectSecretKey = process.env.NEXT_PUBLIC_SECRET_KEY;
@@ -261,10 +260,6 @@ export const DataMarketplaceProvider = ({ children }) => {
 
   const fetchDatas = async () => {
     try {
-      // const provider = new ethers.providers.JsonRpcProvider(
-      //   //--process.env.NEXT_PUBLIC_POLYGON_MUMBAI_RPC
-      //   "https://polygon-mumbai.g.alchemy.com/v2/0awa485pp03Dww2fTjrSCg7yHlZECw-K"
-      // );
       const web3Modal = new Web3Modal();
       const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
@@ -374,102 +369,6 @@ export const DataMarketplaceProvider = ({ children }) => {
     }
   };
 
-  //------------------------------------------------------------------
-
-  // //----TRANSFER FUNDS
-
-  // const fetchTransferFundsContract = (signerOrProvider) =>
-  //   new ethers.Contract(
-  //     transferFundsAddress,
-  //     transferFundsABI,
-  //     signerOrProvider
-  //   );
-
-  // const connectToTransferFunds = async () => {
-  //   try {
-  //     const web3Modal = new Wenb3Modal();
-  //     const connection = await web3Modal.connect();
-  //     const provider = new ethers.providers.Web3Provider(connection);
-  //     const signer = provider.getSigner();
-  //     const contract = fetchTransferFundsContract(signer);
-  //     return contract;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // //---TRANSFER FUNDS
-  // const [transactionCount, setTransactionCount] = useState("");
-  // const [transactions, setTransactions] = useState([]);
-  // const [loading, setLoading] = useState(false);
-
-  // const transferEther = async (address, ether, message) => {
-  //   try {
-  //     if (currentAccount) {
-  //       const contract = await connectToTransferFunds();
-  //       console.log(address, ether, message);
-
-  //       const unFormatedPrice = ethers.utils.parseEther(ether);
-  //       // //FIRST METHOD TO TRANSFER FUND
-  //       await ethereum.request({
-  //         method: "eth_sendTransaction",
-  //         params: [
-  //           {
-  //             from: currentAccount,
-  //             to: address,
-  //             gas: "0x5208",
-  //             value: unFormatedPrice._hex,
-  //           },
-  //         ],
-  //       });
-
-  //       const transaction = await contract.addDataToBlockchain(
-  //         address,
-  //         unFormatedPrice,
-  //         message
-  //       );
-
-  //       console.log(transaction);
-
-  //       setLoading(true);
-  //       transaction.wait();
-  //       setLoading(false);
-
-  //       const transactionCount = await contract.getTransactionCount();
-  //       setTransactionCount(transactionCount.toNumber());
-  //       window.location.reload();
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // //FETCH ALL TRANSACTION
-  // const getAllTransactions = async () => {
-  //   try {
-  //     if (ethereum) {
-  //       const contract = await connectToTransferFunds();
-
-  //       const avaliableTransaction = await contract.getAllTransactions();
-
-  //       const readTransaction = avaliableTransaction.map((transaction) => ({
-  //         addressTo: transaction.receiver,
-  //         addressFrom: transaction.sender,
-  //         timestamp: new Date(
-  //           transaction.timestamp.toNumber() * 1000
-  //         ).toLocaleString(),
-  //         message: transaction.message,
-  //         amount: parseInt(transaction.amount._hex) / 10 ** 18,
-  //       }));
-
-  //       setTransactions(readTransaction);
-  //       console.log(transactions);
-  //     } else {
-  //       console.log("On Ethereum");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   return (
     <DataMarketplaceContext.Provider
       value={{
@@ -490,15 +389,7 @@ export const DataMarketplaceProvider = ({ children }) => {
         currentAccount,
         titleData,
         hasTokenFromOwner,
-        // setOpenError,
-        // openError,
-        // error,
-        // transferEther,
-        // getAllTransactions,
-        // loading,
         accountBalance,
-        // transactionCount,
-        // transactions,
       }}
     >
       {children}

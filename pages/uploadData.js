@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 
 //INTERNAL IMPORT
 import Style from "../styles/uploadData.module.css";
-import { UploadData } from "../UploadData/uploadDataIndex";
+import { UploadData } from "../utils/uploadData/uploadDataIndex";
 
 //SMART CONTRACT IMPORT
 import { DataMarketplaceContext } from "../Context/DataMarketplaceContext";

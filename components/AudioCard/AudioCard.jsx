@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { TbPlayerPlay, TbPlayerPause } from "react-icons/tb";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -94,7 +93,7 @@ const AudioCard = ({ Data }) => {
   return (
     <div className={Style.DataCardTwo}>
       {DataState.map((el, i) => (
-        <Link href={{ pathname: "/Data-details", query: el }} key={i + 1}>
+        <Link href={{ pathname: "/dataDetails", query: el }} key={i + 1}>
           <div className={Style.DataCardTwo_box}>
             <div className={Style.audioCard_box_player}>
               <Image src={images.musiceWave2} alt="musice" width={150} height={150} />
@@ -114,19 +113,6 @@ const AudioCard = ({ Data }) => {
                     <TbPlayerPlay />
                   </div>
                 )}
-                {/* <div className={Style.audioCard_box_musicPlayer_volume}>
-                  <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.1"
-                    value={el.volume}
-                    onChange={(event) => {
-                      event.preventDefault();
-                      changeVolume(el.tokenId, event.target.value);
-                    }}
-                  />
-                </div> */}
               </div>
             </div>
             <div className={Style.DataCardTwo_box_info}>

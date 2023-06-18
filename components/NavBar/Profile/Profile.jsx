@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { FaUserAlt, FaRegImage, FaUserEdit } from "react-icons/fa";
+import { FaUserAlt, FaRegImage } from "react-icons/fa";
 import { MdHelpCenter } from "react-icons/md";
-import { TbDownloadOff, TbDownload } from "react-icons/tb";
+import { TbDownload } from "react-icons/tb";
 import Link from "next/link";
 
 //INTERNAL IMPORT
@@ -41,12 +41,6 @@ const Profile = ({ currentAccount }) => {
               <Link href={{ pathname: "/author" }}>My Items</Link>
             </p>
           </div>
-          {/* <div className={Style.profile_menu_one_item}>
-            <FaUserEdit />
-            <p>
-              <Link href={{ pathname: "/account" }}>Edit Profile</Link>
-            </p>
-          </div> */}
         </div>
 
         <div className={Style.profile_menu_two}>

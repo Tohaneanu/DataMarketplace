@@ -17,14 +17,11 @@ import hero from "./hero.png";
 import musiceWave from "./musicwave.png";
 import musiceWave2 from "./musicwave2.png";
 import update from "./update.png";
-import earn from "./eran.png";
 import upload from "./upload.png";
 import provider1 from "./provider-1.png";
 import provider2 from "./provider-2.png";
 import provider3 from "./provider-3.png";
 import loader from "./loadergif.gif";
-import transfer from "./transfer.gif";
-import transferEther from "./ethereTransfer.gif";
 import videoPreview from "./videoPreview.png";
 import audioPreview from "./audioPreview.png";
 import audioPrev from "./AudioPreview.gif"
@@ -34,7 +31,6 @@ export default {
   provider2,
   provider3,
   upload,
-  earn,
   update,
   musiceWave,
   musiceWave2,
@@ -55,8 +51,6 @@ export default {
   youtube,
   zgcmq,
   loader,
-  transfer,
-  transferEther,
   videoPreview,
   audioPreview,
   audioPrev

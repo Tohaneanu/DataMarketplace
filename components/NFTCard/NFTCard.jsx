@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { BsImages } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,7 +20,7 @@ const NFTCard = ({ Data }) => {
   return (
     <div className={Style.DataCard}>
       {Data.map((el, i) => (
-        <Link href={{ pathname: "/Data-details", query: el }} key={i + 1}>
+        <Link href={{ pathname: "/dataDetails", query: el }} key={i + 1}>
           <div className={Style.DataCard_box} key={i + 1}>
             <div className={Style.DataCard_box_img}>
               <Image

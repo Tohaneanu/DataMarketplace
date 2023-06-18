@@ -57,7 +57,6 @@ const useTokenDiabetesPredict = () => {
         const std = [3.369578, 31.972618, 19.355807, 15.952218, 115.244002, 7.884160, 0.331329, 11.760232];
         // Efectuați scalarea datelor pentru predicție
         const customInputScaled = sub(customInput, mean).div(std);
-        console.log(customInputScaled)
         // Realizați predicția
         const prediction = model.predict(customInputScaled);
 

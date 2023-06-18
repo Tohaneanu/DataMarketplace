@@ -2,13 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 
 //INTERNAL IMPORT
 import Style from "../styles/author.module.css";
-import { Banner } from "../collectionPage/collectionIndex";
-import images from "../img";
 import {
   AuthorProfileCard,
   AuthorTaps,
   AuthorNFTCardBox,
-} from "../authorPage/componentIndex";
+} from "../utils/authorPage/componentIndex";
 
 //IMPORT SMART CONTRACT DATA
 import { DataMarketplaceContext } from "../Context/DataMarketplaceContext";

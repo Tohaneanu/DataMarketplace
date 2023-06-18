@@ -79,14 +79,6 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 5043:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("@ffmpeg/ffmpeg");
-
-/***/ }),
-
 /***/ 2167:
 /***/ ((module) => {
 
@@ -383,14 +375,6 @@ module.exports = require("react-icons/md");
 
 /***/ }),
 
-/***/ 8098:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("react-icons/ri");
-
-/***/ }),
-
 /***/ 4152:
 /***/ ((module) => {
 
@@ -446,7 +430,7 @@ module.exports = import("react-toastify");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [377,675,952,664,536,65], () => (__webpack_exec__(8510)));
+var __webpack_exports__ = __webpack_require__.X(0, [377,675,952,664,927,65], () => (__webpack_exec__(8510)));
 module.exports = __webpack_exports__;
 
 })();

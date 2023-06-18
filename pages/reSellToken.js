@@ -5,7 +5,7 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 //INTERNAL IMPORT
 import Style from "../styles/reSellToken.module.css";
-import formStyle from "../AccountPage/Form/Form.module.css";
+import formStyle from "../utils/form/Form.module.css";
 import { Button } from "../components/componentsindex";
 
 //IMPORT SMART CONTRACT
