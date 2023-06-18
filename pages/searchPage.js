@@ -3,7 +3,7 @@ import {toast} from "react-toastify";
 //INTRNAL IMPORT
 import Style from "../styles/searchPage.module.css";
 import { Loader, SelectComponent, AudioCard } from "../components/componentsindex";
-import { SearchBar } from "../utils/SearchPage/searchBarIndex";
+import { SearchBar } from "../utils/searchPage/searchBarIndex";
 
 import { DataCard, Banner } from "../utils/collectionPage/collectionIndex";
 import images from "../img";
