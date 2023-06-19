@@ -7,6 +7,19 @@
   padding: 2rem;
 }
 
+.Form_box_input_paragraph {
+  width: 20rem;
+  margin-right: 1rem;
+  /* Alte stiluri CSS pe care le doriți pentru paragraf */
+}
+
+.Form_title{
+  display: contents;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
 .Form_box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -35,9 +48,37 @@
   align-items: center;
 }
 
-.Form_box_input_box input {
+.Form_box_popup {
   width: 100%;
-  width: 200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-bg-color);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  gap: 3rem;
+}
+
+.Form_box_popup p {
+  text-align: center;
+}
+
+.Form_box_input_padding{
+  width: 7.5rem;
+  
+}
+.Form_box_input_box input{
+  width: 20rem;
+  height: 35px;
+  padding: 0.5rem;
+  border: 1px solid var(--icons-color);
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+}
+
+.Form_box_select {
+  width: 20rem;
   height: 35px;
   padding: 0.5rem;
   border: 1px solid var(--icons-color);
@@ -47,14 +88,18 @@
 
 .upload_box_btn {
   display: flex;
+  margin-left: 2rem;
+  font-size: 2.5rem;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .upload_box_btn_style {
+  margin-top: 4.5rem;
   padding: 0.5rem 2rem;
-
+  width: 15rem;
+  height: 3rem;
   transition: background-color 0.3s ease;
 }
 
