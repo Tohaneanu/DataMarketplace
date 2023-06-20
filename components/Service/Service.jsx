@@ -20,8 +20,7 @@ const Service = () => {
           </p>
           <h3>Connect Wallet</h3>
           <p>
-            Connect with wallet, discover, buy NTFs, sell your Datas and earn
-            money
+            Connect with wallet
           </p>
         </div>
         <div className={Style.service_box_item}>
@@ -34,10 +33,9 @@ const Service = () => {
           <p className={Style.service_box_item_step}>
             <span>Step 2</span>
           </p>
-          <h3>Filter</h3>
+          <h3>Buy</h3>
           <p>
-            Connect with wallet, discover, buy NTFs, sell your Datas and earn
-            money
+            Discover and buy Data
           </p>
         </div>
         <div className={Style.service_box_item}>
@@ -50,15 +48,14 @@ const Service = () => {
           <p className={Style.service_box_item_step}>
             <span>Step 3</span>
           </p>
-          <h3>Discover</h3>
+          <h3>Use</h3>
           <p>
-            Connect with wallet, discover, buy NTFs, sell your Datas and earn
-            money
+           Use your Data
           </p>
         </div>
         <div className={Style.service_box_item}>
           <Image
-            src={images.service1}
+            src={images.service4}
             alt="Buy"
             width={100}
             height={100}
@@ -66,10 +63,9 @@ const Service = () => {
           <p className={Style.service_box_item_step}>
             <span>Step 4</span>
           </p>
-          <h3>Buy</h3>
+          <h3>Sell</h3>
           <p>
-            Connect with wallet, discover, buy NTFs, sell your Datas and earn
-            money
+            Create and sell your data
           </p>
         </div>
       </div>
