@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 //INTERNAL IMPORT
-import Style from "./NFTCard.module.css";
+import Style from "./DataCard.module.css";
 
-const NFTCard = ({ Data }) => {
+const DataCard = ({ Data }) => {
   const [like, setLike] = useState(true);
 
   const likeData = () => {
@@ -16,7 +16,6 @@ const NFTCard = ({ Data }) => {
     }
   };
 
-  // console.log(Data);
   return (
     <div className={Style.DataCard}>
       {Data.map((el, i) => (
@@ -59,4 +58,4 @@ const NFTCard = ({ Data }) => {
   );
 };
 
-export default NFTCard;
+export default DataCard;

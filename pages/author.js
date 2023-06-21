@@ -5,7 +5,7 @@ import Style from "../styles/author.module.css";
 import {
   AuthorProfileCard,
   AuthorTaps,
-  AuthorNFTCardBox,
+  AuthorDataCardBox,
 } from "../utils/authorPage/componentIndex";
 
 //IMPORT SMART CONTRACT DATA
@@ -78,7 +78,7 @@ const author = () => {
         currentAccount={currentAccount}
       />
 
-      <AuthorNFTCardBox
+      <AuthorDataCardBox
         collectiables={collectiables}
         created={created}
         Datas={Datas}

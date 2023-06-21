@@ -5,7 +5,7 @@ import HeroSection from "./HeroSection/HeroSection";
 import Service from "./Service/Service";
 import Filter from "./Filter/Filter";
 import SelectComponent from "./SelectComponent/SelectComponent";
-import NFTCard from "./NFTCard/NFTCard";
+import DataCard from "./DataCard/DataCard";
 import AudioCard from "./AudioCard/AudioCard";
 import Loader from "./Loader/Loader";
 import Guard from "./Guard/Guard";
@@ -18,7 +18,7 @@ export {
   Service,
   Filter,
   SelectComponent,
-  NFTCard,
+  DataCard,
   AudioCard,
   Loader,
   Guard

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 //INTERNAL IMPORT
-import Style from "./AuthorNFTCardBox.module.css";
+import Style from "./AuthorDataCardBox.module.css";
 import { DataCard } from "../../collectionPage/collectionIndex";
 
-const AuthorNFTCardBox = ({
+const AuthorDataCardBox = ({
   collectiables,
   created,
   Datas,
@@ -18,4 +18,4 @@ const AuthorNFTCardBox = ({
   );
 };
 
-export default AuthorNFTCardBox;
+export default AuthorDataCardBox;
