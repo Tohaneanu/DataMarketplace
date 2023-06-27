@@ -88,7 +88,6 @@ const useTokenDiabetesPredict = () => {
           Number(hbA1c),
           Number(bloodG),
         ];
-        console.log(customInputData)
         const customInput = tensor2d([customInputData]);
         const mean = scaler.mean;
         const std = scaler.var.map(Math.sqrt);

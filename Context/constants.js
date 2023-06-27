@@ -5,7 +5,7 @@ import DataMarketplace from "./DataMarketplace.json";
 
 //Data MARKETPLACE
 export const DataMarketplaceAddress =
-  "0xeb8a77b1E58b3CB86Cbb30f9B927a7329fab56c8";
+  "0x2bFBbE4e0f11d6AAdD5D75b2334C7C70bf4C63C6";
 export const DataMarketplaceABI = DataMarketplace.abi;
 
 

@@ -1,9 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-const NEXT_PUBLIC_POLYGON_MUMBAI_RPC = "YOUR RPC URL";
-const NEXT_PUBLIC_PRIVATE_KEY = "PRIVATE KEY";
-/** @type import('hardhat/config').HardhatUserConfig */
-
 module.exports = {
   solidity: "0.8.17",
   //defaultNetwork: "matic",

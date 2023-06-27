@@ -62,51 +62,64 @@ export const DataMarketplaceProvider = ({ children }) => {
   const [accountBalance, setAccountBalance] = useState("");
   const router = useRouter();
 
-  //---CHECK IF WALLET IS CONNECTD
-
+  //---CHECK IF WALLET IS CONNECTED
   const checkIfWalletConnected = async () => {
     try {
+      // Verificăm dacă MetaMask este instalat
       if (!window.ethereum)
-        toast.error("Install MetaMask", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
+        toast.error("Install MetaMask", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
+      // Obținem lista de conturi disponibile în MetaMask
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
+      // Verificăm dacă există cel puțin un cont
       if (accounts.length) {
+        // Setăm contul curent cu primul cont din lista
         setCurrentAccount(accounts[0]);
       } else {
-        toast.error("No Account Found", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
+        // Dacă nu există conturi, afișăm un mesaj de eroare
+        toast.error("No Account Found", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
       }
+      // Creăm un furnizor Web3Provider folosind MetaMask
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      // Obținem soldul contului curent
       const getBalance = await provider.getBalance(accounts[0]);
+      // Formatăm soldul într-un format mai ușor de citit
       const bal = ethers.utils.formatEther(getBalance);
+      // Setăm balanța contului curent
       setAccountBalance(bal);
+      // Returnăm true pentru a indica că portofelul este conectat
       return true;
     } catch (error) {
+      // În caz de eroare, returnăm false
       return false;
+    }
+  };
+
+  //---CONNECT WALLET FUNCTION
+  const connectWallet = async () => {
+    try {
+      // Verificăm dacă MetaMask este instalat
+      if (!window.ethereum)
+        toast.error("Install MetaMask", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
+      // Obținem lista de conturi disponibile în MetaMask prin solicitarea de conectare
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      // Setăm contul curent cu primul cont din lista
+      setCurrentAccount(accounts[0]);
+      // Verificăm dacă se face conexiunea cu un smart contract
+      if (connectingWithSmartContract())
+        router.push("/searchPage");
+    } catch (error) {
+      // În caz de eroare, afișăm un mesaj de eroare
+      toast.error("Error while connecting to wallet", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
     }
   };
 
   useEffect(() => {
     checkIfWalletConnected();
   }, []);
-
-  //---CONNET WALLET FUNCTION
-  const connectWallet = async () => {
-    try {
-      if (!window.ethereum)
-        toast.error("Install MetaMask", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-
-      setCurrentAccount(accounts[0]);
-      if (connectingWithSmartContract())
-        router.push("/searchPage");
-    } catch (error) {
-      toast.error("Error while connecting to wallet", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
-    }
-  };
-
   // get listing price
   const getListingPrice = async () => {
     try {
@@ -128,8 +141,8 @@ export const DataMarketplaceProvider = ({ children }) => {
     } catch (error) {
       toast.error("Error while checking role", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
     }
-  } 
-  
+  }
+
   const hasTokenFromOwner = async () => {
     try {
       const contract = await connectingWithSmartContract();
@@ -184,46 +197,50 @@ export const DataMarketplaceProvider = ({ children }) => {
       let thumbnailUrl = "";
       if (type == "Video") {
         const dataUrl = URL.createObjectURL(file); // Obțineți URL-ul obiectului File
+        // Creăm un element video pentru a obține dimensiunile și a crea miniatura
         const video = document.createElement('video');
         video.src = dataUrl; // Setare sursă video la URL-ul obiectului File
         await video.play(); // Pornirea redării videoclipului pentru a asigura încărcarea completă
         video.pause();
+        // Creăm un element canvas pentru a desena miniatura videoclipului
         const canvas = document.createElement('canvas');
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         const ctx = canvas.getContext('2d');
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height); // Desenăm videoul pe canvas
-
-        const dataURL = canvas.toDataURL('image/png'); // Conversia la URL de date pentru imagine de tip JPEG
+        // Convertim miniatura la formatul base64
+        const dataURL = canvas.toDataURL('image/png'); // Conversia la URL de date pentru imagine de tip PNG
         const buffer = Buffer.from(dataURL.split(',')[1], 'base64');
+        // Adăugăm miniatura la IPFS și obținem URL-ul acesteia
         const added = await client.add({ content: buffer });
         thumbnailUrl = `${subdomain}/ipfs/${added.path}`;
         URL.revokeObjectURL(dataUrl); // Revocarea URL-ului obiectului File pentru a evita memory leak
       }
-
+      // Adăugăm fișierul la IPFS și obținem URL-ul acestuia
       const added = await client.add({ content: file });
       const url = `${subdomain}/ipfs/${added.path}`;
       return { url, thumbnailUrl };
     } catch (error) {
-      toast.error("Error Uploading to IPFS", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
+      toast.error("Error Uploading to IPFS", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
     }
   };
-
-
 
   //---CREATEData FUNCTION
   const createData = async (name, price, image, thumbnail, description, dataType, router) => {
     if (!name || !description || !price || !image || !dataType)
-      return toast.error("Data Is Missing!", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
+      return toast.error("Data Is Missing!", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
+    // Se creează obiectul de date în format JSON
     const data = JSON.stringify({ name, description, image, thumbnail });
     try {
+      // Se adaugă obiectul de date la IPFS și se obține URL-ul acestuia
       const added = await client.add(data);
       const url = `${subdomain}/ipfs/${added.path}`;
-
+      // Se creează vânzarea pentru obiectul de date
       await createSale(url, price, dataType);
+      // Se redirecționează utilizatorul către pagina de căutare
       router.push("/searchPage");
     } catch (error) {
-      toast.error("Error while creating Data!", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, });
+      toast.error("Error while creating Data!", { closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined });
     }
   };
 
